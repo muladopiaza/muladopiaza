@@ -1,12 +1,14 @@
 name: Update Git Koi
 
 on:
+  push:
+    branches: [main]
   schedule:
-    - cron: "0 0 * * *"   # runs daily
-  workflow_dispatch:       # lets you run it manually
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 permissions:
-  contents: write          # needed if the action commits to your repo
+  contents: write
 
 jobs:
   koi:
