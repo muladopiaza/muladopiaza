@@ -1,1 +1,18 @@
+name: Update Git Koi
 
+on:
+  schedule:
+    - cron: "0 0 * * *"   # runs daily
+  workflow_dispatch:       # lets you run it manually
+
+permissions:
+  contents: write          # needed if the action commits to your repo
+
+jobs:
+  koi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: git-profile-koi
+        uses: yalongwastaken/git-koi@v1.0.2
